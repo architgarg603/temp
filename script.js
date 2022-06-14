@@ -19,10 +19,25 @@ let arr = [
 ]
 
 let idx = 0;
+let check = true;
 
 btn.addEventListener("click", () => {
+    if(!check)return
+    check = false;
     if (idx >= arr.length) idx = 0;
-    text.innerHTML = arr[idx++];
     btn.innerHTML = "Next"
+    setTimeout(()=>{
+        text.innerHTML = 3;
+    },1000)
+    setTimeout(()=>{
+        text.innerHTML = 2;
+    },2000)
+    setTimeout(()=>{
+        text.innerHTML = 1;
+    },3000)
+    setTimeout(()=>{
+        text.innerHTML = arr[idx++];
+        check = true
+    },4000)
 })
 
